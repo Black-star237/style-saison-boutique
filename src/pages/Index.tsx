@@ -2,6 +2,7 @@
 import { ShoppingBag, Search, User, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Link } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import FeaturedProducts from '@/components/FeaturedProducts';
 import CategoryShowcase from '@/components/CategoryShowcase';
@@ -15,18 +16,18 @@ const Index = () => {
           {/* Top bar */}
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
-            <div className="text-2xl font-bold text-gray-900">
+            <Link to="/" className="text-2xl font-bold text-gray-900">
               Helsothario
               <span className="block text-sm font-normal text-amber-600">Fashion</span>
-            </div>
+            </Link>
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-amber-600 font-medium hover:text-amber-700 transition-colors">Home</a>
-              <a href="#" className="text-gray-700 hover:text-amber-600 transition-colors">Nouveautés</a>
-              <a href="#" className="text-gray-700 hover:text-amber-600 transition-colors">Femmes</a>
-              <a href="#" className="text-gray-700 hover:text-amber-600 transition-colors">Hommes</a>
-              <a href="#" className="text-gray-700 hover:text-amber-600 transition-colors">Accessoires</a>
+              <Link to="/" className="text-amber-600 font-medium hover:text-amber-700 transition-colors">Home</Link>
+              <Link to="/nouveautes" className="text-gray-700 hover:text-amber-600 transition-colors">Nouveautés</Link>
+              <Link to="/femmes" className="text-gray-700 hover:text-amber-600 transition-colors">Femmes</Link>
+              <Link to="/hommes" className="text-gray-700 hover:text-amber-600 transition-colors">Hommes</Link>
+              <Link to="/accessoires" className="text-gray-700 hover:text-amber-600 transition-colors">Accessoires</Link>
             </nav>
 
             {/* Right icons */}
@@ -42,13 +43,17 @@ const Index = () => {
               <Button variant="ghost" size="icon" className="hover:bg-amber-50">
                 <Heart className="w-5 h-5 text-gray-600" />
               </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-amber-50">
-                <User className="w-5 h-5 text-gray-600" />
-              </Button>
-              <Button variant="ghost" size="icon" className="relative hover:bg-amber-50">
-                <ShoppingBag className="w-5 h-5 text-gray-600" />
-                <span className="absolute -top-1 -right-1 bg-amber-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
-              </Button>
+              <Link to="/login">
+                <Button variant="ghost" size="icon" className="hover:bg-amber-50">
+                  <User className="w-5 h-5 text-gray-600" />
+                </Button>
+              </Link>
+              <Link to="/cart">
+                <Button variant="ghost" size="icon" className="relative hover:bg-amber-50">
+                  <ShoppingBag className="w-5 h-5 text-gray-600" />
+                  <span className="absolute -top-1 -right-1 bg-amber-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -74,16 +79,16 @@ const Index = () => {
             <div>
               <h4 className="font-semibold mb-4">Navigation</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Nouveautés</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Femmes</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Hommes</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Accessoires</a></li>
+                <li><Link to="/nouveautes" className="hover:text-white transition-colors">Nouveautés</Link></li>
+                <li><Link to="/femmes" className="hover:text-white transition-colors">Femmes</Link></li>
+                <li><Link to="/hommes" className="hover:text-white transition-colors">Hommes</Link></li>
+                <li><Link to="/accessoires" className="hover:text-white transition-colors">Accessoires</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Service Client</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+                <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
                 <li><a href="#" className="hover:text-white transition-colors">Livraison</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Retours</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Guide des tailles</a></li>
